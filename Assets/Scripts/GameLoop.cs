@@ -28,24 +28,31 @@ public class GameLoop : MonoBehaviour {
 				if (Spawner.queue.Peek().transform.position.x < -4){ //Check monster collision with player
 					kid.GetComponent<Player>().playerHurt();
 					Spawner.queue.Dequeue();
-					if(bar.doDamage(0.1f)){
+					if(bar.doDamage(0.25f)){
 						gameOver();
 					}
 				}
 			
-				if (beam.color == Spawner.queue.Peek().GetComponent<Enemy>().colorEnemy){	//Check beam collision with monster
+				if(Spawner.queue.Peek().transform.position.x < 8){
+				if (beam.isBonus) {
 					GameObject temp = Spawner.queue.Dequeue();
 					Destroy(temp);
-					if(!beam.isBonus){
+					return;
+				}
+					if (beam.color == Spawner.queue.Peek().GetComponent<Enemy>().colorEnemy) {	//Check beam collision with monster
+						GameObject temp = Spawner.queue.Dequeue();
+						Destroy(temp);
+						if(!beam.isBonus){
 
-						if(bar.heal(0.01f)){
-							startBonus = Time.time;
-							beam.isBonus = true;
+							if(bar.heal(0.05f)){
+								startBonus = Time.time;
+								beam.isBonus = true;
+							}
 						}
-					}
-				} else if(beam.color != 0){
-					if(bar.doDamage(0.005f)){
-						gameOver();
+					} else if(beam.color != 0){
+						if(bar.doDamage(0.008f)){
+							gameOver();
+						}
 					}
 				}
 			}

@@ -34,7 +34,7 @@ public class Spawner : MonoBehaviour {
 			 int enemyIndex = Random.Range(0, enemies.Length);
 			 if (time > 0.3f) newTime = time -= 0.05f;
 			 switch (enemyIndex) {
-			 	case 0:	yPos = 4.82f;	break;
+			 	case 0:	yPos = 3.9f;	break;
 			 	case 1:	yPos = 1.55f;	break;
 			 	case 2:	yPos = -1.26f;	break;
 			 	case 3:	yPos = -2.41f;	break;
