@@ -24,7 +24,9 @@ public class GameLoop : MonoBehaviour {
 				beam.isBonus = false;
 				bar.doDamage(.5f);
 			}
-			if (false){ //Check monster collision with player
+			if (Spawner.current != null && Spawner.current.transform.position.x < -4){ //Check monster collision with player
+				kid.GetComponent<Player>().playerHurt();
+				Spawner.current = null;
 				if(bar.doDamage(0.01f)){
 					GameLoop.scrollSpeed = 0;
 					kid.playerDie();

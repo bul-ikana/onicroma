@@ -44,6 +44,7 @@ MonoBehaviour:
   frames:
   - {fileID: 21300000, guid: f0df1915f76023b4f81ba9661eedf6a0, type: 3}
   - {fileID: 21300000, guid: b397940103e820c47bfa414aea7be97d, type: 3}
+  - {fileID: 21300000, guid: d2632a328c18613418dab5cbefd0f344, type: 3}
 --- !u!212 &21277854
 SpriteRenderer:
   m_ObjectHideFlags: 1

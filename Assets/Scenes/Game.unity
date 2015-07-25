@@ -1107,7 +1107,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: .0219999999
-  m_StereoMirrorMode: 0
 --- !u!4 &1258766687
 Transform:
   m_ObjectHideFlags: 0
@@ -1407,7 +1406,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isBonus: 0
-  fx: {fileID: 8300000, guid: f0543a0775dc92242af893fe5bdfe222, type: 3}
 --- !u!82 &1605638370
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1616,6 +1614,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deadFrame: {fileID: 21300000, guid: 20d2689deb59897498aebe251ce215c1, type: 3}
+  hurtFrame: {fileID: 21300000, guid: d2632a328c18613418dab5cbefd0f344, type: 3}
   fps: 3.5
   frames:
   - {fileID: 21300000, guid: f0df1915f76023b4f81ba9661eedf6a0, type: 3}
