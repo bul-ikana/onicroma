@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Beam : MonoBehaviour {
 
-	int color;
+	public int color;
 	float r;
 	float g;
 	float b;
@@ -100,6 +100,8 @@ public class Beam : MonoBehaviour {
 					altFlag = true;
 					source.Play();
 				}
+
+				// if(color == Spawner.queue)
 			}else if(altFlag) {
 				altFlag = false;
 				source.Pause();

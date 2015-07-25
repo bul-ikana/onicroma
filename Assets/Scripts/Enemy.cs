@@ -7,6 +7,8 @@ public class Enemy : MonoBehaviour {
 	private float g;
 	private float b;
 
+	public int colorEnemy;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -18,6 +20,7 @@ public class Enemy : MonoBehaviour {
 	}
 
 	public void SetColor(int color) {
+		colorEnemy = color;
 		switch (color) {
 			case 0: r = 0.2f;	g = 0.2f;	b = 0.2f;	break;
 			case 1: r = 1f;		g = 1f;		b = 0f;		break;

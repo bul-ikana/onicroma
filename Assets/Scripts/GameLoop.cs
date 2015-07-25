@@ -28,17 +28,25 @@ public class GameLoop : MonoBehaviour {
 				if (Spawner.queue.Peek().transform.position.x < -4){ //Check monster collision with player
 					kid.GetComponent<Player>().playerHurt();
 					Spawner.queue.Dequeue();
-					if(bar.doDamage(0.01f)){
-						GameLoop.scrollSpeed = 0;
-						kid.playerDie();
-						playing = false;
+					if(bar.doDamage(0.1f)){
+						gameOver();
 					}
 				}
-			}
-			if (false && !beam.isBonus){	//Check beam collision with monster
-				if(bar.heal(0.01f)){
-					startBonus = Time.time;
-					beam.isBonus = true;
+			
+				if (beam.color == Spawner.queue.Peek().GetComponent<Enemy>().colorEnemy){	//Check beam collision with monster
+					GameObject temp = Spawner.queue.Dequeue();
+					Destroy(temp);
+					if(!beam.isBonus){
+
+						if(bar.heal(0.01f)){
+							startBonus = Time.time;
+							beam.isBonus = true;
+						}
+					}
+				} else if(beam.color != 0){
+					if(bar.doDamage(0.005f)){
+						gameOver();
+					}
 				}
 			}
 		}else if (Input.GetMouseButtonDown(0)){
@@ -47,5 +55,11 @@ public class GameLoop : MonoBehaviour {
 			kid.playerBorn();
 			playing = true;
 		}
+	}
+
+	void gameOver() {
+		GameLoop.scrollSpeed = 0;
+		kid.playerDie();
+		playing = false;	
 	}
 }
