@@ -31,14 +31,14 @@ public class GameLoop : MonoBehaviour {
 					playing = false;
 				}
 			}
-			if (true && !beam.isBonus){	//Check beam collision with monster
+			if (false && !beam.isBonus){	//Check beam collision with monster
 				if(bar.heal(0.01f)){
 					startBonus = Time.time;
 					beam.isBonus = true;
 				}
 			}
 		}else if (Input.GetMouseButtonDown(0)){
-			bar.heal(.5f);
+			// bar.heal(.5f);
 			GameLoop.scrollSpeed = 10;
 			kid.playerBorn();
 			playing = true;
