@@ -19,7 +19,7 @@ public class Spawner : MonoBehaviour {
 
 
 		instance = (GameObject)Instantiate(enemies[index], transform.position, transform.rotation);
-		instance.GetComponent<Enemy>().SetColor(createColor);
+		// instance.GetComponent<Enemy>().SetColor(createColor);
 		isSpawning = false;
 	}
 
