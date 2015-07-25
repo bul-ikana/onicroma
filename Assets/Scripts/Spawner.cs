@@ -4,7 +4,7 @@ using System.Collections;
 public class Spawner : MonoBehaviour {
 
 	private bool isSpawning = false;
-	private float time  = 2f;
+	private float time  = 3f;
 	public GameObject[] enemies;
 	private float newTime = 0;
 	private GameObject instance;
@@ -14,8 +14,8 @@ public class Spawner : MonoBehaviour {
 
 	IEnumerator SpawnMonster(int index, float time) {
 		yield return new WaitForSeconds(time);
-		if (time > 1.5f) createColor = colorNumbers[Random.Range(0, 3)]; else
-		if (time > 0.8f) createColor = colorNumbers[Random.Range(0, 6)]; 
+		if (time > 2.5f) createColor = colorNumbers[Random.Range(0, 3)]; else
+		if (time > 1.8f) createColor = colorNumbers[Random.Range(0, 6)]; 
 		else createColor = colorNumbers[Random.Range(0, 8)]; 
 
 

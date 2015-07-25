@@ -127,7 +127,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f10de4d1c0b3ef47a431ef4b7c4c4ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: 10
   repeatProbability: 4
   outSize: 27
 --- !u!212 &16758471
@@ -605,7 +604,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a26ecc858f8b574fa9b22a7daedf83c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: 10
   tileSizeZ: 20.6800003
 --- !u!212 &696705638
 SpriteRenderer:
@@ -913,7 +911,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a30abbfc4fa4d6488ecce2c305e3da7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: 10
   repeatProbability: 2
   outSize: 37
   maxY: 5.5
@@ -985,7 +982,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a26ecc858f8b574fa9b22a7daedf83c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: 10
   tileSizeZ: 40.7999992
 --- !u!212 &1066973263
 SpriteRenderer:
@@ -1149,7 +1145,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a30abbfc4fa4d6488ecce2c305e3da7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: 10
   repeatProbability: 10
   outSize: 26
   maxY: 4
@@ -1282,8 +1277,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1605638366}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.11999989, y: -1.04999995, z: 0}
-  m_LocalScale: {x: 2.59169388, y: 1.24999976, z: 1}
+  m_LocalPosition: {x: 2.6400001, y: -1.04999995, z: 0}
+  m_LocalScale: {x: 2.76750875, y: 1.24999976, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -1315,7 +1310,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a30abbfc4fa4d6488ecce2c305e3da7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: 10
   repeatProbability: 10
   outSize: 26
   maxY: 4
