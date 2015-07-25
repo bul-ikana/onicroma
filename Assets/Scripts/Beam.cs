@@ -62,8 +62,7 @@ public class Beam : MonoBehaviour {
 
         if (isBonus){
         	if (Time.time-lastRainbow>.04){
-	        	if (Random.value>.3)
-	        		color += 1;
+        		color += 1;
 	        	if (Random.value>.3)
 	        		color += 2;
 	        	if (Random.value>.3)
@@ -99,10 +98,10 @@ public class Beam : MonoBehaviour {
 				a = 1f;
 				if(!altFlag) {
 					altFlag = true;
-					source.UnPause();
 					source.Play();
 				}
 			}else if(altFlag) {
+				altFlag = false;
 				source.Pause();
 			}
 		
