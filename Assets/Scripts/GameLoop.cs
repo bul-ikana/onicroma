@@ -4,7 +4,7 @@ using System.Collections;
 public class GameLoop : MonoBehaviour {
 	private HealthBar bar;
 	private Player kid;
-	private Test beam;
+	private Beam beam;
 	private bool playing = true;
 	private float startBonus = 0;
 
@@ -14,13 +14,13 @@ public class GameLoop : MonoBehaviour {
 	void Start () {
 		bar = GameObject.Find("health").GetComponent<HealthBar>();
 		kid = GameObject.Find("player").GetComponent<Player>();
-		beam = GetComponent<Test>();
+		beam = GameObject.Find("beam").GetComponent<Beam>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (playing){
-			if (Time.time-startBonus>=10 && beam.isBonus){
+			if (Time.time-startBonus>=5 && beam.isBonus){
 				beam.isBonus = false;
 				bar.doDamage(.5f);
 			}

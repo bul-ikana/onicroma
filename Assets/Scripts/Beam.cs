@@ -1,22 +1,25 @@
 using UnityEngine;
 using System.Collections;
 
-public class Test : MonoBehaviour {
+public class Beam : MonoBehaviour {
 
-	GameObject beam;
 	int color;
 	float r;
 	float g;
 	float b;
 	float a;
 	public bool isBonus = false;
+    private AudioSource source;
+
 	float lastRainbow = 0;
 	int lastColor = 0;
+
+	bool altFlag = false;
 
 	// Use this for initialization
 	void Start () {
 		r = g = b = 0;
-		beam = GameObject.Find("Beam");
+		 source = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -94,9 +97,16 @@ public class Test : MonoBehaviour {
 
 			if (color>0){
 				a = 1f;
+				if(!altFlag) {
+					altFlag = true;
+					source.UnPause();
+					source.Play();
+				}
+			}else if(altFlag) {
+				source.Pause();
 			}
 		
-		beam.GetComponent<Renderer>().material.color = new Color(r, g, b, a);
+		GetComponent<Renderer>().material.color = new Color(r, g, b, a);
 		// Debug.Log(beam.GetComponent<Renderer>().material.color);
 	}
 
