@@ -3,7 +3,6 @@ using System.Collections;
 
 public class ItemScroller : MonoBehaviour {
 
-	public float scrollSpeed;
 	public float repeatProbability;
 	public float outSize;
 	private float probMax = 1000;
@@ -19,16 +18,17 @@ public class ItemScroller : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-        if (appear){
-        	float newPosition = Mathf.Repeat((Time.time-started) * scrollSpeed, outSize+scrollSpeed);
-        	if (newPosition>=outSize){
-        		appear = false;
-        	}
-			transform.position = startPosition + Vector3.left * newPosition;
-        }else if (Random.value*probMax>probMax-repeatProbability){
-        	started = Time.time;
-        	appear = true;
-        }
+		if (GameLoop.scrollSpeed>0){
+	        if (appear){
+	        	float newPosition = Mathf.Repeat((Time.time-started) * GameLoop.scrollSpeed, outSize+GameLoop.scrollSpeed);
+	        	if (newPosition>=outSize){
+	        		appear = false;
+	        	}
+				transform.position = startPosition + Vector3.left * newPosition;
+	        }else if (Random.value*probMax>probMax-repeatProbability){
+	        	started = Time.time;
+	        	appear = true;
+	        }
+		}
 	}
 }

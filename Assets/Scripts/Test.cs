@@ -51,7 +51,7 @@ public class Test : MonoBehaviour {
         		color += 2;
         }
         if (Input.GetKey("e")){
-        		color += 1;
+        		color += 4;
         }
 
         	// Debug.Log(color);
