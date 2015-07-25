@@ -24,6 +24,9 @@ public class GameLoop : MonoBehaviour {
 				beam.isBonus = false;
 				bar.doDamage(.5f);
 			}
+			if (beam.isBonus) {
+				bar.changeColor(beam.color);
+			}
 			if(Spawner.queue.Count > 0){
 				if (Spawner.queue.Peek().transform.position.x < -4){ //Check monster collision with player
 					kid.GetComponent<Player>().playerHurt();
@@ -44,7 +47,7 @@ public class GameLoop : MonoBehaviour {
 						Destroy(temp);
 						if(!beam.isBonus){
 
-							if(bar.heal(0.05f)){
+							if(bar.heal(0.05f, beam.color)){
 								startBonus = Time.time;
 								beam.isBonus = true;
 							}
