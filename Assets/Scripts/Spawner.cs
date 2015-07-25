@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Spawner : MonoBehaviour {
 
-	public static GameObject current;
+	public static Queue<GameObject> queue = new Queue<GameObject>();
 	private bool isSpawning = false;
 	private float time  = 3f;
 	public GameObject[] enemies;
@@ -22,8 +23,7 @@ public class Spawner : MonoBehaviour {
 
 		instance = (GameObject)Instantiate(enemies[index], new Vector3(14f, yPos, 0), transform.rotation);
 		instance.GetComponent<Enemy>().SetColor(createColor);
-		if(Spawner.current == null) Spawner.current = instance;
-		Debug.Log(Spawner.current);
+		Spawner.queue.Enqueue(instance);
 		isSpawning = false;
 	}
 

@@ -24,13 +24,15 @@ public class GameLoop : MonoBehaviour {
 				beam.isBonus = false;
 				bar.doDamage(.5f);
 			}
-			if (Spawner.current != null && Spawner.current.transform.position.x < -4){ //Check monster collision with player
-				kid.GetComponent<Player>().playerHurt();
-				Spawner.current = null;
-				if(bar.doDamage(0.01f)){
-					GameLoop.scrollSpeed = 0;
-					kid.playerDie();
-					playing = false;
+			if(Spawner.queue.Count > 0){
+				if (Spawner.queue.Peek().transform.position.x < -4){ //Check monster collision with player
+					kid.GetComponent<Player>().playerHurt();
+					Spawner.queue.Dequeue();
+					if(bar.doDamage(0.01f)){
+						GameLoop.scrollSpeed = 0;
+						kid.playerDie();
+						playing = false;
+					}
 				}
 			}
 			if (false && !beam.isBonus){	//Check beam collision with monster
