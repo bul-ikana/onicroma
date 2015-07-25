@@ -13,13 +13,14 @@ public class Spawner : MonoBehaviour {
 
 	IEnumerator SpawnMonster(int index, float time) {
 		yield return new WaitForSeconds(time);
-		if (time < 1.5f) createColor = colorNumbers[Random.Range(0, 2)]; else
-		if (time < 1f) createColor = colorNumbers[Random.Range(0, 5)]; else
-		if (time < .5f) createColor = colorNumbers[Random.Range(0, 5)]; 
+		if (time > 1.5f) createColor = colorNumbers[Random.Range(0, 3)]; else
+		if (time > 0.8f) createColor = colorNumbers[Random.Range(0, 6)]; 
+		else createColor = colorNumbers[Random.Range(0, 8)]; 
+		Debug.Log(createColor);
 
 
 		instance = (GameObject)Instantiate(enemies[index], transform.position, transform.rotation);
-		// instance.GetComponent<Enemy>().SetColor(createColor);
+		instance.GetComponent<Enemy>().SetColor(createColor);
 		isSpawning = false;
 	}
 
@@ -28,7 +29,7 @@ public class Spawner : MonoBehaviour {
 		if (!isSpawning) {
 			isSpawning = true;
 			 int enemyIndex = Random.Range(0, enemies.Length);
-			 if (time > 0.3f) newTime -= 0.05f;
+			 if (time > 0.3f) newTime = time -= 0.05f;
 
 			 StartCoroutine(SpawnMonster(enemyIndex, newTime));
 		}

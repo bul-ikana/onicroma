@@ -19,7 +19,7 @@ public class Enemy : MonoBehaviour {
 
 	public void SetColor(int color) {
 		switch (color) {
-			case 0: r = 0f;	g = 0f;		b = 0f;	break;
+			case 0: r = 0.2f;	g = 0.2f;		b = 0.2f;	break;
 			case 1: r = 1f;	g = 1f;		b = 0f;	break;
 			case 2: r = 0f;	g = 0f;		b = 1f;	break;
 			case 3: r = 0f;	g = .5f;	b = 0f;	break;
