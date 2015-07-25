@@ -3,7 +3,7 @@ using System.Collections;
 
 public class background : MonoBehaviour {
 
-	private var madera : GameObject;
+	// private var madera : GameObject;
 
 	// Use this for initialization
 	void Start () {
