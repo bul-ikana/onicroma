@@ -86,13 +86,13 @@ public class Beam : MonoBehaviour {
 			// 6 morado
 			// 7 blanco
 			switch (color) {
-				case 1: r = 1f;	g = 1f;		b = 0f;	break;
-				case 2: r = 0f;	g = 0f;		b = 1f;	break;
-				case 3: r = 0f;	g = .5f;	b = 0f;	break;
-				case 4: r = 1f;	g = 0f;		b = 0f;	break;
-				case 5: r = 1f;	g = .5f;	b = 0f;	break;
-				case 6: r = .5f;	g = 0f;		b = 1f;	break;
-				case 7: r = 1f;	g = 1f;		b = 1f;	break;
+				case 1: r = 1f;		g = 1f;		b = 0f;	break;
+				case 2: r = 0f;		g = 0f;		b = 1f;	break;
+				case 3: r = 0f;		g = .5f;	b = 0f;	break;
+				case 4: r = 1f;		g = 0f;		b = 0f;	break;
+				case 5: r = 1f;		g = .5f;	b = 0f;	break;
+				case 6: r = .8f;	g = 0f;		b = 1f;	break;
+				case 7: r = 1f;		g = 1f;		b = 1f;	break;
 			}
 
 			if (color>0){
