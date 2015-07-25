@@ -9,6 +9,9 @@ public class Test : MonoBehaviour {
 	float g;
 	float b;
 	float a;
+	public bool isBonus = false;
+	float lastRainbow = 0;
+	int lastColor = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -54,6 +57,23 @@ public class Test : MonoBehaviour {
         		color += 4;
         }
 
+        if (isBonus){
+        	if (Time.time-lastRainbow>.04){
+	        	if (Random.value>.3)
+	        		color += 1;
+	        	if (Random.value>.3)
+	        		color += 2;
+	        	if (Random.value>.3)
+	        		color += 4;
+
+	        	lastRainbow = Time.time;
+        		lastColor = color;
+        	}else{
+        		color = lastColor;
+        	}
+
+        }
+
         	// Debug.Log(color);
 			// 1 amarillo
 			// 2 azul
@@ -79,4 +99,5 @@ public class Test : MonoBehaviour {
 		beam.GetComponent<Renderer>().material.color = new Color(r, g, b, a);
 		// Debug.Log(beam.GetComponent<Renderer>().material.color);
 	}
+
 }

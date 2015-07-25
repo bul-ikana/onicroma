@@ -5,13 +5,17 @@ public class Player : MonoBehaviour {
 	public Sprite deadFrame;
 	public float fps = 2;
 	public Sprite[] frames;
+	public AudioClip deadSound;
+	public AudioClip peeSound;
+
 	private float frame = 0;
 	private float lastUpdate = 0;
 	private bool alive = true;
+    private AudioSource source;
 
 	// Use this for initialization
 	void Start () {
-	
+		 source = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -25,6 +29,13 @@ public class Player : MonoBehaviour {
 	public void playerDie(){
 		alive = false;
 		GetComponent<SpriteRenderer>().sprite = deadFrame;
+		source.PlayOneShot(deadSound, .5f);
+		source.PlayOneShot(peeSound, 1f);
+	}
+
+	public void playerBorn(){
+		alive = true;
+		source.Stop();
 	}
 
 	void changeFrame(){
