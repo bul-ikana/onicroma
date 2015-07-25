@@ -8,6 +8,11 @@ public class GameLoop : MonoBehaviour {
 	private bool playing = true;
 	private float startBonus = 0;
 
+	public AudioClip chompSound;
+	public AudioClip deadMonsSound;
+	public AudioSource source;
+
+
 	public static float scrollSpeed = 10;
 
 	// Use this for initialization
@@ -15,6 +20,7 @@ public class GameLoop : MonoBehaviour {
 		bar = GameObject.Find("health").GetComponent<HealthBar>();
 		kid = GameObject.Find("player").GetComponent<Player>();
 		beam = GameObject.Find("beam").GetComponent<Beam>();
+
 	}
 	
 	// Update is called once per frame
@@ -31,6 +37,7 @@ public class GameLoop : MonoBehaviour {
 				if (Spawner.queue.Peek().transform.position.x < -4){ //Check monster collision with player
 					kid.GetComponent<Player>().playerHurt();
 					Spawner.queue.Dequeue();
+					source.PlayOneShot(chompSound, 1f);
 					if(bar.doDamage(0.25f)){
 						gameOver();
 					}
@@ -40,11 +47,17 @@ public class GameLoop : MonoBehaviour {
 				if (beam.isBonus) {
 					GameObject temp = Spawner.queue.Dequeue();
 					Destroy(temp);
+					source.PlayOneShot(deadMonsSound, .5f);
+					source.time = .15f;
 					return;
 				}
 					if (beam.color == Spawner.queue.Peek().GetComponent<Enemy>().colorEnemy) {	//Check beam collision with monster
 						GameObject temp = Spawner.queue.Dequeue();
 						Destroy(temp);
+						source.PlayOneShot(deadMonsSound, .5f);
+						source.time = .15f;
+
+
 						if(!beam.isBonus){
 
 							if(bar.heal(0.05f, beam.color)){
