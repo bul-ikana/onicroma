@@ -8,6 +8,7 @@ public class Test : MonoBehaviour {
 	float r;
 	float g;
 	float b;
+	float a;
 
 	// Use this for initialization
 	void Start () {
@@ -26,7 +27,7 @@ public class Test : MonoBehaviour {
 		// 		"time", 0f
 		// 	)
 		// );
-		beam.GetComponent<Renderer>().material.color = new Color(0f, 0f, 0f, 1);
+		r = g = b = a = 0;
 		color = 0;
         if (Input.touchCount != 0) {
         	foreach (Touch t in Input.touches) {
@@ -38,6 +39,7 @@ public class Test : MonoBehaviour {
         				case "Blue":	color += 2;	break;
         				case "Red":		color += 4;	break;
         			}
+					a = 1f;
         		}
         	}
         	// Debug.Log(color);
@@ -57,11 +59,9 @@ public class Test : MonoBehaviour {
 				case 6: r = .5f;	g = 0f;		b = 1f;	break;
 				case 7: r = 1f;	g = 1f;		b = 1f;	break;
 			}
-        } else {
-        	r = 0;	g = 0;	b = 0;
         }
 		
-		beam.GetComponent<Renderer>().material.color = new Color(r, g, b, 1);
-		Debug.Log(beam.GetComponent<Renderer>().material.color);
+		beam.GetComponent<Renderer>().material.color = new Color(r, g, b, a);
+		// Debug.Log(beam.GetComponent<Renderer>().material.color);
 	}
 }
