@@ -11,6 +11,7 @@ public class GameLoop : MonoBehaviour {
 	public AudioClip chompSound;
 	public AudioClip deadMonsSound;
 	public AudioSource source;
+	// private Text score;
 
 
 	public static float scrollSpeed = 10;
@@ -20,7 +21,8 @@ public class GameLoop : MonoBehaviour {
 		bar = GameObject.Find("health").GetComponent<HealthBar>();
 		kid = GameObject.Find("player").GetComponent<Player>();
 		beam = GameObject.Find("beam").GetComponent<Beam>();
-
+		// score = GetComponent<Text>();
+		// score.layer = 200;
 	}
 	
 	// Update is called once per frame
