@@ -79,8 +79,8 @@ public class Beam : MonoBehaviour {
         	// Debug.Log(color);
 			// 1 amarillo
 			// 2 azul
-			// 3 verda
-			// 4  rojo
+			// 3 verde
+			// 4 rojo
 			// 5 naranja
 			// 6 morado
 			// 7 blanco
@@ -98,13 +98,14 @@ public class Beam : MonoBehaviour {
 				a = 1f;
 				if(!altFlag) {
 					altFlag = true;
+					source.loop = true;
 					source.Play();
 				}
 
 				// if(color == Spawner.queue)
 			}else if(altFlag) {
 				altFlag = false;
-				source.Pause();
+				source.loop = false;
 			}
 		
 		GetComponent<Renderer>().material.color = new Color(r, g, b, a);

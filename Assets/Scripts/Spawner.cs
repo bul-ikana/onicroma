@@ -18,7 +18,7 @@ public class Spawner : MonoBehaviour {
 		yield return new WaitForSeconds(time);
 		if (time > 2.5f) createColor = colorNumbers[Random.Range(0, 3)]; else
 		if (time > 1.8f) createColor = colorNumbers[Random.Range(0, 6)]; 
-		else createColor = colorNumbers[Random.Range(0, 8)]; 
+		else createColor = colorNumbers[Random.Range(0, 7)]; 
 
 
 		instance = (GameObject)Instantiate(enemies[index], new Vector3(14f, yPos, 0), transform.rotation);
@@ -32,7 +32,7 @@ public class Spawner : MonoBehaviour {
 		if (!isSpawning) {
 			isSpawning = true;
 			 int enemyIndex = Random.Range(0, enemies.Length);
-			 if (time > 0.3f) newTime = time -= 0.05f;
+			 if (time > 0.8f) newTime = time -= 0.04f;
 			 switch (enemyIndex) {
 			 	case 0:	yPos = 3.9f;	break;
 			 	case 1:	yPos = 1.55f;	break;

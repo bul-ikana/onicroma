@@ -16,7 +16,7 @@ public class EnemyScroller : MonoBehaviour {
 	void Update () {
 		if (GameLoop.scrollSpeed > 0) {
 	        float movespeed = 0.0f;
-	        movespeed-= .1f;
+	        movespeed-= .04f;
 	        transform.Translate(movespeed, 0, 0);
 	        if (transform.position.x <= outSize){
 	        	Destroy(gameObject);

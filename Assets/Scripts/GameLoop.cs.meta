@@ -1,10 +1,13 @@
 fileFormatVersion: 2
 guid: 761af5aa124fa1d4c88481605f46431a
-timeCreated: 1437832595
+timeCreated: 1446510250
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - chompSound: {fileID: 8300000, guid: f86d7ce6e8e1c074caa52e82f8853c2d, type: 3}
+  - deadMonsSound: {fileID: 8300000, guid: 230ab3e884df0ea4ca746808d48728c9, type: 3}
+  - source: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

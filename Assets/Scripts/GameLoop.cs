@@ -5,6 +5,7 @@ public class GameLoop : MonoBehaviour {
 	private HealthBar bar;
 	private Player kid;
 	private Beam beam;
+	private TextMesh scoreTxt;
 	private bool playing = true;
 	private float startBonus = 0;
 
@@ -12,6 +13,7 @@ public class GameLoop : MonoBehaviour {
 	public AudioClip deadMonsSound;
 	public AudioSource source;
 
+	private int score = 0;
 
 	public static float scrollSpeed = 10;
 
@@ -20,12 +22,15 @@ public class GameLoop : MonoBehaviour {
 		bar = GameObject.Find("health").GetComponent<HealthBar>();
 		kid = GameObject.Find("player").GetComponent<Player>();
 		beam = GameObject.Find("beam").GetComponent<Beam>();
+		scoreTxt = GameObject.Find("Score").GetComponent<TextMesh>();
+
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (playing){
+			scoreTxt.text = (int)(Time.time * 10) * 100+ "";
 			if (Time.time-startBonus>=5 && beam.isBonus){
 				beam.isBonus = false;
 				bar.doDamage(.5f);
