@@ -12,6 +12,7 @@ public class GameLoop : MonoBehaviour {
 	public AudioClip chompSound;
 	public AudioClip deadMonsSound;
 	public AudioSource source;
+	// private Text score;
 
 	private int score = 0;
 
@@ -24,6 +25,8 @@ public class GameLoop : MonoBehaviour {
 		beam = GameObject.Find("beam").GetComponent<Beam>();
 		scoreTxt = GameObject.Find("Score").GetComponent<TextMesh>();
 
+		// score = GetComponent<Text>();
+		// score.layer = 200;
 
 	}
 	
